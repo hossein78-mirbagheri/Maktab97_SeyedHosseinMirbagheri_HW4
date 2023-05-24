@@ -2,9 +2,11 @@
 
 CreateUsers createUsers = new CreateUsers();
 ShowUser showUser = new ShowUser();
+DeleteUser deleteUser = new DeleteUser();
 bool flag;
 string option = "";
 string username = "";
+int id = 0;
 string path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
 long mobile;
 DateTime birthdate;
@@ -34,9 +36,17 @@ do
         case "2":
             Console.Clear();
             showUser.showlist(path);
-            Console.WriteLine(" What Is Your User Name: ");
-            username = Console.ReadLine();
-            createUsers.DeleteUser(username);
+            Console.WriteLine(" What Is Your User Id: ");
+            id = Convert.ToInt32(Console.ReadLine());
+            var del = deleteUser.delete(id);
+            if (del == true) 
+            {
+                Console.WriteLine("Delete User Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Delete Error");
+            }
             break;
         case "3":
             Console.Clear();
