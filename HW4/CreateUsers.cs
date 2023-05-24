@@ -24,15 +24,6 @@ namespace HW4
         {
             
         }
-        public void ShowUser()
-        {
-            //int i = 0;
-            //foreach (var user in DataStorage.bookList)
-            //{
-            //    i++;
-            //    Console.WriteLine($"book number{i} is :{book.Title}");
-            //}
-            //Console.WriteLine();
-        }
+       
     }
 }

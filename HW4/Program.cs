@@ -1,9 +1,11 @@
 ﻿using HW4;
 
 CreateUsers createUsers = new CreateUsers();
+ShowUser showUser = new ShowUser();
 bool flag;
 string option = "";
 string username = "";
+string path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
 long mobile;
 DateTime birthdate;
 do
@@ -31,14 +33,18 @@ do
 
         case "2":
             Console.Clear();
-            createUsers.ShowUser();
+            showUser.showlist(path);
             Console.WriteLine(" What Is Your User Name: ");
             username = Console.ReadLine();
             createUsers.DeleteUser(username);
             break;
         case "3":
             Console.Clear();
-            createUsers.ShowUser();
+            var sh = showUser.showlist(path);
+            foreach(var item in sh)
+            {
+                Console.WriteLine(item);
+            }
             break;
 
         case "4":
