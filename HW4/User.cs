@@ -9,7 +9,7 @@ namespace HW4
     public class User
     {
         public string Name { get; set; }
-        public int Mobile { get; set; }
-        public int BirthDate { get; set; }
+        public long Mobile { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }
